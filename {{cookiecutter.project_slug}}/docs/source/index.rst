@@ -6,7 +6,7 @@
 |
 
 {{cookiecutter.project_slug}} Documentation
-===================
+{% for i in  "{{cookiecutter.project_slug}} Documentation" %}={% endfor %}
 
 .. toctree::
    :maxdepth: 2

@@ -19,9 +19,9 @@ from docs.scripts.plot import make_plots
 
 # -- Project information -----------------------------------------------------
 
-project = {{cookiecutter.project_slug}}
+project = "{{cookiecutter.project_slug}}"
 copyright = "ACTRIS"
-author = {{cookiecutter.author}}
+author = "{{cookiecutter.author}}"
 
 
 # -- General configuration ---------------------------------------------------
@@ -61,23 +61,24 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-html_sidebars = {
-    "**": ["globaltoc.html", "relations.html", "sourcelink.html", "searchbox.html"]
-}
+html_sidebars = {"**": ["globaltoc.html", "relations.html", "sourcelink.html", "searchbox.html"]}
 
 html_theme_options = {"collapse_navigation": False, "display_version": True}
 
-html_logo = os.path.join(os.path.dirname(__file__), "assets/logo_actris-white.png")
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = ["assets", "_static"]
+html_css_files = [
+    "css/custom.css",
+]
+
+html_logo = os.path.join(os.path.dirname(__file__), "assets/logo_actris_ccress.png")
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["assets"]
 
 make_plots()
