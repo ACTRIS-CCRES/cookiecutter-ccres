@@ -1,4 +1,4 @@
-{% if cookiecutter.licence == "GNU Affero General Public License v3.0" -%}
+{% if cookiecutter.license == "GNU Affero General Public License v3.0" -%}
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
@@ -661,7 +661,7 @@ if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU AGPL, see
 <https://www.gnu.org/licenses/>.
 
-{% elif cookiecutter.licence == "Apache License 2.0" -%}
+{% elif cookiecutter.license == "Apache License 2.0" -%}
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -864,7 +864,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
    See the License for the specific language governing permissions and
    limitations under the License.
 
-{% elif cookiecutter.licence == "BSD 2-Clause "Simplified" License" -%}
+{% elif cookiecutter.license == "BSD 2-Clause \"Simplified\" License" -%}
 BSD 2-Clause License
 
 Copyright (c) [year], [fullname]
@@ -891,7 +891,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-{% elif cookiecutter.licence == "BSD 3-Clause "New" or "Revised" License" -%}
+{% elif cookiecutter.license == "BSD 3-Clause \"New\" or \"Revised\" License" -%}
 BSD 3-Clause License
 
 Copyright (c) [year], [fullname]
@@ -922,7 +922,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-{% elif cookiecutter.licence == "Boost Software License 1.0" -%}
+{% elif cookiecutter.license == "Boost Software License 1.0" -%}
 Boost Software License - Version 1.0 - August 17th, 2003
 
 Permission is hereby granted, free of charge, to any person or organization
@@ -947,7 +947,7 @@ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
-{% elif cookiecutter.licence == "Creative Commons Zero v1.0 Universal" -%}
+{% elif cookiecutter.license == "Creative Commons Zero v1.0 Universal" -%}
 Creative Commons Legal Code
 
 CC0 1.0 Universal
@@ -1070,7 +1070,7 @@ express Statement of Purpose.
     party to this document and has no duty or obligation with respect to
     this CC0 or use of the Work.
 
-{% elif cookiecutter.licence "== "Eclipse Public License 2.0"" -%}
+{% elif cookiecutter.license == "Eclipse Public License 2.0" -%}
 Eclipse Public License - v 2.0
 
     THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE
@@ -1349,7 +1349,7 @@ version(s), and exceptions or additional permissions here}."
 
   You may add additional accurate notices of copyright ownership.
 
-{% elif cookiecutter.licence == "G"NU General Public License v2.0"" -%}
+{% elif cookiecutter.license == "GNU General Public License v2.0" -%}
                     GNU GENERAL PUBLIC LICENSE
                        Version 2, June 1991
 
@@ -1690,7 +1690,7 @@ consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
 
-{% elif cookiecutter.licence == "GNU General Public License v3.0" -%}
+{% elif cookiecutter.license == "GNU General Public License v3.0" -%}
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -2366,7 +2366,7 @@ the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 
-{% elif cookiecutter.licence == "GNU Lesser General Public License v2.1" -%}
+{% elif cookiecutter.license == "GNU Lesser General Public License v2.1" -%}
                   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 2.1, February 1999
 
@@ -2872,7 +2872,7 @@ necessary.  Here is a sample; alter the names:
 
 That's all there is to it!
 
-{% elif cookiecutter.licence == "MIT License" -%}
+{% elif cookiecutter.license == "MIT License" -%}
 MIT License
 
 Copyright (c) [year] [fullname]
@@ -2895,7 +2895,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-{% elif cookiecutter.licence == "Mozilla Public License 2.0" -%}
+{% elif cookiecutter.license == "Mozilla Public License 2.0" -%}
 Mozilla Public License Version 2.0
 ==================================
 
@@ -3270,7 +3270,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
 
-{% elif cookiecutter.licence == "The Unlicense" -%}
+{% elif cookiecutter.license == "The Unlicense" -%}
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -3295,5 +3295,5 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org>
-{% elif cookiecutter.licence == "Not Open Source" -%}
+{% elif cookiecutter.license == "Not Open Source" -%}
 {% endif %}

@@ -2,7 +2,7 @@ import requests
 
 URL = "https://api.github.com/licenses"
 OUTPUT_FILE = "LICENSE.cookiecutter"
-ARG = "licence"
+ARG = "license"
 
 
 def main():
@@ -19,11 +19,12 @@ def main():
         first_if = True
         f.write(f"# {list(text_licenses.keys())}\n")
         for name, body in text_licenses.items():
+            escaped_name = name.replace('"', '\\"')
             if first_if == True:
-                cookie_cutter_str = f'if cookiecutter.{ARG} == "{name}"'
+                cookie_cutter_str = f'if cookiecutter.{ARG} == "{escaped_name}"'
                 first_if = False
             else:
-                cookie_cutter_str = f'elif cookiecutter.{ARG} == "{name}"'
+                cookie_cutter_str = f'elif cookiecutter.{ARG} == "{escaped_name}"'
             f.write("{% " + cookie_cutter_str + " -%}\n")
             f.write(body)
             f.write("\n")
