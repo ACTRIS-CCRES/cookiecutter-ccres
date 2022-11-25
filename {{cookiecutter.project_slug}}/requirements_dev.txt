@@ -20,6 +20,7 @@ myst
 myst-parser
 
 {%- if cookiecutter.add_scientific_requirements == "y" -%}
+
 # Scientific
 pandas>=1.1.1
 xarray>=0.17.0
