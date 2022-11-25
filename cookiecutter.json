@@ -1,0 +1,12 @@
+{
+  "author": "CCRES",
+  "email": "audreyr@example.com",
+  "github_username": "audreyr",
+  "project_name": "Python Boilerplate",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+  "pypi_username": "{{ cookiecutter.github_username }}",
+  "version": "0.1.0",
+  "add_scientific_requirements": "y",
+  "license": ["GNU Affero General Public License v3.0", "Apache License 2.0", "BSD 2-Clause \"Simplified\" License", "BSD 3-Clause \"New\" or \"Revised\" License", "Boost Software License 1.0", "Creative Commons Zero v1.0 Universal", "Eclipse Public License 2.0", "GNU General Public License v2.0", "GNU General Public License v3.0", "GNU Lesser General Public License v2.1", "MIT License", "Mozilla Public License 2.0", "The Unlicense","Not Open Source"]
+}
