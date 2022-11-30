@@ -23,7 +23,7 @@ classifiers = [
         'Programming Language :: Python :: 3.11',
 ]
 keywords=['CCRES','{{ cookiecutter.project_slug }}']
-dependencies=[]
+dependencies=["click"]
 # Dynamic for setuptools
 dynamic = ["version"]
 
@@ -72,3 +72,8 @@ zip-safe=false
 
 [tool.setuptools.packages.find]
 include = ["{{cookiecutter.project_slug}}", "{{cookiecutter.project_slug}}.*"]
+
+[tool.mypy]
+disallow_untyped_defs = true
+ignore_missing_imports = true
+exclude = ['build/','venv']

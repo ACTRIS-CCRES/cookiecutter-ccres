@@ -18,7 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install .[all]
+          pip install .[dev]
 
       - name: Compute pre-commit cache key
         if: matrix.session == 'pre-commit'
@@ -38,7 +38,6 @@ jobs:
           - { python: "3.10", os: "macos-latest", session: "tests" }
           - { python: "3.9", os: "ubuntu-latest", session: "tests" }
           - { python: "3.8", os: "ubuntu-latest", session: "tests" }
-          - { python: "3.7", os: "ubuntu-latest", session: "tests" }
 
     env:
       FORCE_COLOR: "1"
@@ -60,7 +59,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install .[all]
+          pip install .[dev]
 
       - name: Run tests
         run: |
@@ -101,7 +100,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install .[all]
+          pip install .[dev]
       - name: Run MyPy
         run: |
           mypy .
@@ -119,7 +118,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install .[all]
+          pip install .[dev]
       - name: Run MyPy
         run: |
           flake8
