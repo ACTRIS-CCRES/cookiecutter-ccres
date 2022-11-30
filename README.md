@@ -20,3 +20,8 @@ cookiecutter cookiecutter-ccres -o <wherever you want>
 ```
 
 Then let yourself be guided by the command line interface.
+
+## Tokens
+In order to pass the pipelines you'll need the following tokens :
+-
+-

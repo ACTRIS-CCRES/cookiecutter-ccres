@@ -18,17 +18,3 @@ sphinx>=3.2.1
 sphinx_rtd_theme>=0.4.3
 myst
 myst-parser
-
-{%- if cookiecutter.add_scientific_requirements == "y" -%}
-
-# Scientific
-pandas>=1.1.1
-xarray>=0.17.0
-matplotlib>=3.3.1
-pvlib>=0.9.0
-cftime>=1.2.1
-netcdf4>=1.5.3
-numpy>=1.19.1
-numba>=0.51.2
-scipy>=1.5.2
-{% endif %}

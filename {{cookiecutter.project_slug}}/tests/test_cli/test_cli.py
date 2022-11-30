@@ -2,7 +2,6 @@
 
 import pytest
 from click.testing import CliRunner
-from {{cookiecutter.project_slug}} import {{ cookiecutter.project_slug }}
 from {{cookiecutter.project_slug}}.cli import cli
 
 

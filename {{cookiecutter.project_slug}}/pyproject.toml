@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ cookiecutter.project_slug }}"
+authors = [
+    { name="{{cookiecutter.author}}", email="{{cookiecutter.email}}"},
+]
+description="{{cookiecutter.project_short_description}}"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+        'Development Status :: 2 - Pre-Alpha',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: GNU Affero General Public License v3',
+        'Natural Language :: English',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+]
+keywords=['CCRES','{{ cookiecutter.project_slug }}']
+dependencies=[]
+# Dynamic for setuptools
+dynamic = ["version"]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+homepage = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
+documentation = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
+repository = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
+changelog = "https://github.com/ACTRIS-CCRES/cookiecutter-ccres/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
+
+[project.optional-dependencies]
+dev = [
+    "{{ cookiecutter.project_slug }}",
+    # Pytest
+    "pytest>=6.1.1",
+    "pytest-cov>=2.10.1",
+    "pytest-mock>=3.6.1",
+    "coverage>=5.3",
+
+    # Documentation
+    "sphinx>=3.2.1",
+    "sphinx_rtd_theme>=0.4.3",
+    "myst",
+    "myst-parser",
+
+    # Tox
+    "tox",
+
+    # Pre-commit
+    "pre-commit",
+
+    #Flake
+    "flake8",
+
+    #Mypy
+    "mypy"
+]
+[project.entry-points."{{ cookiecutter.project_slug }}"]
+{{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.cli.cli:main"
+
+[tool.setuptools]
+zip-safe=false
+
+[tool.setuptools.packages.find]
+include = ["{{cookiecutter.project_slug}}", "{{cookiecutter.project_slug}}.*"]

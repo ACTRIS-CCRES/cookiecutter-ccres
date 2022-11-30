@@ -54,34 +54,37 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 
     $ git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+3. Install your local copy into a virtual environment. Assuming you have venv installed, this is how you set up your fork for local development :
 
-    $ mkvirtualenv {{ cookiecutter.project_slug }}
+    $ python -m venv venv  {{ cookiecutter.project_slug }}
     $ cd {{ cookiecutter.project_slug }}/
-    $ python setup.py develop
+    $ pip install -e .[dev]
 
-4. Create a branch for local development::
+4. Install the pre-commit hooks by running :
+   $ pre-commit install
+
+5. Make sure you have git-LFS installed.
+
+6. Create a branch for local development::
 
     $ git checkout -b name-of-your-bugfix-or-feature
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the
+7. When you're done making changes, apply the pre-commit and check that your changes pass the
    tests, including testing other Python versions with tox::
 
-    $ flake8 {{ cookiecutter.project_slug }} tests
+    $ pre-commit {{ cookiecutter.project_slug }} tests
     $ python setup.py test or pytest
     $ tox
 
-   To get flake8 and tox, just pip install them into your virtualenv.
-
-6. Commit your changes and push your branch to GitHub::
+8. Commit your changes and push your branch to GitHub::
 
     $ git add .
     $ git commit -m "Your detailed description of your changes."
     $ git push origin name-of-your-bugfix-or-feature
 
-7. Submit a pull request through the GitHub website.
+9.  Submit a pull request through the GitHub website.
 
 ## Pull Request Guidelines
 
@@ -108,8 +111,9 @@ A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in HISTORY.rst).
 Then run::
 
-$ bump2version patch # possible: major / minor / patch
+$ bump2version patch # possible: major / minor / patch / release_candidate / dev
 $ git push
 $ git push --tags
 
-Travis will then deploy to PyPI if tests pass.
+This will then deploy the package in PyPI if tests pass and a tag is set,
+otherwise it will deployed on test-pipy.
