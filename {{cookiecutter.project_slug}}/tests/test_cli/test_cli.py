@@ -2,6 +2,7 @@
 
 import pytest
 from click.testing import CliRunner
+
 from {{cookiecutter.project_slug}}.cli import cli
 
 
@@ -26,7 +27,12 @@ def test_command_line_interface():
     runner = CliRunner()
     result = runner.invoke(cli.main)
     assert result.exit_code == 0
-    assert '{{ cookiecutter.project_slug }}.cli.main' in result.output
-    help_result = runner.invoke(cli.main, ['--help'])
+    assert "--help  Show this message and exit." in result.output
+
+
+def test_command_line_interface_help():
+    """Test the Help argument of CLI."""
+    runner = CliRunner()
+    help_result = runner.invoke(cli.main, ["--help"])
     assert help_result.exit_code == 0
-    assert '--help  Show this message and exit.' in help_result.output
+    assert "ccres_project.cli.main" in help_result.output

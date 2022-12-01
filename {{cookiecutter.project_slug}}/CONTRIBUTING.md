@@ -72,19 +72,21 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
    Now you can make your changes locally.
 
 7. When you're done making changes, apply the pre-commit and check that your changes pass the
-   tests, including testing other Python versions with tox::
+   tests, including testing other Python versions.
 
     $ pre-commit {{ cookiecutter.project_slug }} tests
-    $ python setup.py test or pytest
-    $ tox
+    $ python -m pytest
 
-8. Commit your changes and push your branch to GitHub::
+9. If files are modified by the pre-commit hooks, you need to rea-add them :
+    $ git add <your-modified-files>
+
+9. Commit your changes and push your branch to GitHub::
 
     $ git add .
     $ git commit -m "Your detailed description of your changes."
     $ git push origin name-of-your-bugfix-or-feature
 
-9.  Submit a pull request through the GitHub website.
+10.  Submit a pull request through the GitHub website.
 
 ## Pull Request Guidelines
 
@@ -103,7 +105,7 @@ Before you submit a pull request, check that it meets these guidelines:
 
 To run a subset of tests::
 
-    $ pytest tests.test_{{ cookiecutter.project_slug }}
+    $ python -m pytest tests.test_{{ cookiecutter.project_slug }}
 
 ## Deploying
 

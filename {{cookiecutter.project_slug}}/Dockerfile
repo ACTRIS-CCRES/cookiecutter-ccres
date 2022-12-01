@@ -8,8 +8,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-COPY requirements_dev.txt .
+COPY . .
 
-RUN pip install --no-cache-dir -f requirements_dev.txt
+RUN pip install .[dev]
 
 ENTRYPOINT [ "python" ]

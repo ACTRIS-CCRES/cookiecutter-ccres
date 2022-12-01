@@ -1,3 +1,16 @@
+{%- set LICENSE_CLASSIFIERS = {
+    "GNU Affero General Public License v3.0":"License :: OSI Approved :: GNU Affero General Public License v3",
+    "Apache License 2.0":"License :: OSI Approved :: Apache Software License",
+    "BSD 2-Clause \"Simplified\" License":"License :: OSI Approved :: BSD License",
+    "BSD 3-Clause \"New\" or \"Revised\" License":"License :: OSI Approved :: BSD License",
+    "Creative Commons Zero v1.0 Universal":"License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "GNU General Public License v2.0":"License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "GNU General Public License v3.0":"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "GNU Lesser General Public License v2.1":"License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
+    "MIT License":"License :: OSI Approved :: MIT License",
+    "Mozilla Public License 2.0":"License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+} %}
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -13,7 +26,9 @@ requires-python = ">=3.8"
 classifiers = [
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU Affero General Public License v3',
+{%- if cookiecutter.license in LICENSE_CLASSIFIERS %}
+        '{{ LICENSE_CLASSIFIERS[cookiecutter.license] }}',
+{%- endif %}
         'Natural Language :: English',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: 3',
@@ -22,7 +37,7 @@ classifiers = [
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
 ]
-keywords=['CCRES','{{ cookiecutter.project_slug }}']
+keywords=['{{ cookiecutter.project_slug }}']
 dependencies=["click"]
 # Dynamic for setuptools
 dynamic = ["version"]
@@ -32,10 +47,10 @@ file = "LICENSE"
 
 [project.urls]
 homepage = "{{cookiecutter.github_repo_url}}"
-documentation = "{{cookiecutter.github_repo_url}}"
+documentation = "https://{{ cookiecutter.project_slug | replace('_', '-') }}.readthedocs.io/en/latest/?version=latest"
 repository = "{{cookiecutter.github_repo_url}}"
 changelog = "{{cookiecutter.github_repo_url}}/blob/main/CHANGELOG.md"
-"Bug Tracker" = "{{cookiecutter.github_repo_url}}"
+"Bug Tracker" = "{{cookiecutter.github_repo_url}}/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -58,11 +73,14 @@ dev = [
     # Pre-commit
     "pre-commit",
 
-    #Flake
+    # Formatting
+    "black",
     "flake8",
 
-    #Mypy
+    # Typing
     "mypy"
+
+
 ]
 [project.entry-points."{{ cookiecutter.project_slug }}"]
 {{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.cli.cli:main"
@@ -78,3 +96,7 @@ explicit_package_bases = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
 exclude = ['build/','venv']
+
+[tool.docformatter]
+recursive = true
+blank = true
