@@ -31,11 +31,11 @@ dynamic = ["version"]
 file = "LICENSE"
 
 [project.urls]
-homepage = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
-documentation = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
-repository = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
-changelog = "https://github.com/ACTRIS-CCRES/cookiecutter-ccres/blob/main/CHANGELOG.md"
-"Bug Tracker" = "https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"
+homepage = "{{cookiecutter.github_repo_url}}"
+documentation = "{{cookiecutter.github_repo_url}}"
+repository = "{{cookiecutter.github_repo_url}}"
+changelog = "{{cookiecutter.github_repo_url}}/blob/main/CHANGELOG.md"
+"Bug Tracker" = "{{cookiecutter.github_repo_url}}"
 
 [project.optional-dependencies]
 dev = [

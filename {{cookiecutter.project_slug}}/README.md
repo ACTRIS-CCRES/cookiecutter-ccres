@@ -55,12 +55,12 @@
 
 
 <p align="center">
-    <a href="https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}/actions"><img alt="Tests Status" src="https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}/workflows/tests/badge.svg"></a>
-    <a href="https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}/actions"><img alt="CI Status" src="https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}/workflows/CI/badge.svg?branch=main"></a>
+    <a href="{{ cookiecutter.github_repo_url }}/actions"><img alt="Tests Status" src="{{ cookiecutter.github_repo_url }}/workflows/tests/badge.svg"></a>
+    <a href="{{ cookiecutter.github_repo_url }}/actions"><img alt="CI Status" src="{{ cookiecutter.github_repo_url }}/workflows/CI/badge.svg?branch=main"></a>
     <a href="https://{{ cookiecutter.project_slug | replace('_', '-') }}.readthedocs.io/en/latest/?version=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace('_', '-') }}"></a>
     <a href="https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}"><img alt="PyPI" src="(https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg"></a>
-    <a href="https://github.com/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-    <a href="https://codecov.io/gh/ACTRIS-CCRES/{{ cookiecutter.project_slug }}/branch/main/graph/badge.svg"><img alt="Coverage Status" src="https://codecov.io/gh/ACTRIS-CCRES/{{ cookiecutter.project_slug }}"></a>
+    <a href="{{ cookiecutter.github_repo_url }}"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+    <a href="https://codecov.io/gh/{{cookiecutter.github_username_or_project}}/{{ cookiecutter.project_slug }}/branch/main/graph/badge.svg"><img alt="Coverage Status" src="https://codecov.io/gh/{{cookiecutter.github_username_or_project}}/{{ cookiecutter.project_slug }}"></a>
     {%- if cookiecutter.license in LICENSE_BADGES %}
     <a href="{{ LICENSE_BADGES[cookiecutter.license]['link'] }}"><img alt="License: {{cookiecutter.license}}" src="{{ LICENSE_BADGES[cookiecutter.license]['badge'] }}"></a>
     {%- endif %}

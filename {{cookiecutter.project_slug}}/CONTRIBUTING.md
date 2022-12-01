@@ -10,7 +10,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues.
+Report bugs at {{cookiecutter.github_repo_url}}/issues.
 
 If you are reporting a bug, please include:
 
@@ -36,7 +36,7 @@ articles, and such.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues.
+The best way to send feedback is to file an issue at {{cookiecutter.github_repo_url}}/issues.
 
 If you are proposing a feature:
 
@@ -95,7 +95,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 3.5, 3.6, 3.7 and 3.8, and for PyPy. Check
-   https://travis-ci.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/pull_requests
+   {{cookiecutter.github_repo_url}}/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 ## Tips
