@@ -54,37 +54,59 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 
     $ git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
 
-3. Install your local copy into a virtual environment. Assuming you have venv installed, this is how you set up your fork for local development :
+3. Install your local copy into a virtual environment.
+   1. With **`venv`** : Assuming you have `venv` installed, this is how you set up your fork for local development :
 
-    $ python -m venv venv  {{ cookiecutter.project_slug }}
-    $ cd {{ cookiecutter.project_slug }}/
-    $ pip install -e .[dev]
+    ```
+    cd {{ cookiecutter.project_slug }}/
+    python -m venv <name_of_your_env>
+    pip install -e .[dev]
+    ```
+
+    2. With **`conda`** : Assuming you have conda installed, this is how you set up your fork for local development :
+
+    ```
+    cd {{ cookiecutter.project_slug }}/
+    conda create -n <name_of_your_env> python=3.10
+    conda activate <name_of_your_env>
+    pip install -e .[dev]
+    ```
 
 4. Install the pre-commit hooks by running :
-   $ pre-commit install
+    ```
+    pre-commit install
+    ```
 
-5. Make sure you have git-LFS installed.
+5. Make sure you have `git-LFS` installed.
 
 6. Create a branch for local development::
 
-    $ git checkout -b name-of-your-bugfix-or-feature
+    ```
+    git checkout -b name-of-your-bugfix-or-feature
+    ```
 
    Now you can make your changes locally.
 
 7. When you're done making changes, apply the pre-commit and check that your changes pass the
    tests, including testing other Python versions.
 
-    $ pre-commit {{ cookiecutter.project_slug }} tests
-    $ python -m pytest
+    ```
+    pre-commit {{ cookiecutter.project_slug }} tests
+    python -m pytest
+    ```
 
-9. If files are modified by the pre-commit hooks, you need to rea-add them :
-    $ git add <your-modified-files>
+8. If files are modified by the pre-commit hooks, you need to rea-add them :
+    ```
+    git add <your-modified-files>
+    ```
 
 9. Commit your changes and push your branch to GitHub::
 
-    $ git add .
-    $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+    ```
+    git add .
+    git commit -m "Your detailed description of your changes."
+    git push origin name-of-your-bugfix-or-feature
+    ```
 
 10.  Submit a pull request through the GitHub website.
 
@@ -100,22 +122,23 @@ Before you submit a pull request, check that it meets these guidelines:
    {{cookiecutter.github_repo_url}}/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
-## Tips
+## Tips
 
-
-To run a subset of tests::
-
-    $ python -m pytest tests.test_{{ cookiecutter.project_slug }}
-
+To run a subset of tests :
+```
+python -m pytest tests.test_{{ cookiecutter.project_slug }}
+```
 ## Deploying
 
 A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in HISTORY.rst).
 Then run::
 
-$ bump2version patch # possible: major / minor / patch / release_candidate / dev
-$ git push
-$ git push --tags
+```
+bump2version patch # possible: major / minor / patch / release_candidate / dev
+git push
+git push --tags
+```
 
 This will then deploy the package in PyPI if tests pass and a tag is set,
 otherwise it will deployed on test-pipy.

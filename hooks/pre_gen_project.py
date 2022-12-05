@@ -20,20 +20,9 @@ def check_if_lfs_is_installed():
         )
 
 
-def check_if_precommit_is_installed():
-    return_code = subprocess.run(["pre-commit", "--version"]).returncode
-    if return_code != 0:
-        raise SystemError(
-            "pre-commit does not seem installed. ",
-            'Use "pip install pre-commit" to install it. '
-            "For more information see https://pre-commit.com/",
-        )
-
-
 def main():
     check_if_git_installed()
     check_if_lfs_is_installed()
-    check_if_precommit_is_installed()
 
 
 if __name__ == "__main__":
