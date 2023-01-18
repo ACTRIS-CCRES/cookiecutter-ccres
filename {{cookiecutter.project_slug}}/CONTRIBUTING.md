@@ -147,9 +147,9 @@ otherwise it will deployed on test-pipy.
 
 ### `pre-commit`
 
-Most of the pre-commit hooks required you to do nothing but save the changes. However some pre-commit (e.g. `pydocstyle`) are sometimes hard to respect and can slow down your workflow. Although we recommend to let all of them to have a cleaner repo, if one or more are really annoying for you you can remove or comment them in the `.pre-commit-config.yaml` file.
+Most of the pre-commit hooks require you to do nothing but save the changes. However, some pre-commits (e.g. `pydocstyle`) are sometimes hard to respect and can slow down your workflow. Although we recommend to let all of them to have a cleaner repo, if one or more are really annoying for you, you can remove or comment them in the `.pre-commit-config.yaml` file.
 
-Before each commit, each hook is going to run on the staged file (files added with `git add`), some of the hooks may modify the files. If this happened the commit is cancel. You need to readd the file modified by running `git add <modified-file>` and recommit.
+Before each commit, each hook is going to run against file in the staged area (files added with `git add`). Some of the hooks may modify the files, if this happened, the commit is cancelled. You need to re-add the file(s) modified by running `git add <modified-file>` and recommit.
 
 ### Conventional commits
 

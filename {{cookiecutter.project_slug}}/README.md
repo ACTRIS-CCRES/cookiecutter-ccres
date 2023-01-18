@@ -4,8 +4,8 @@
 
 {%- set LICENSE_BADGES = {
     "GNU Affero General Public License v3.0": {
-        "link": "https://img.shields.io/badge/License-AGPL_v3-blue.svg",
-        "badge": "https://www.gnu.org/licenses/agpl-3.0",
+        "link": "https://www.gnu.org/licenses/agpl-3.0",
+        "badge": "https://img.shields.io/badge/License-AGPL_v3-blue.svg",
     },
     "Apache License 2.0": {
         "link": "https://opensource.org/licenses/Apache-2.0",
