@@ -82,7 +82,8 @@ dev = [
 
 
 ]
-[project.entry-points."{{ cookiecutter.project_slug }}"]
+
+[project.scripts]
 {{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.cli.cli:main"
 
 [tool.setuptools]
