@@ -53,13 +53,16 @@
     },
 }%}
 
+{% set github_repo_splitted = cookiecutter.github_repo_url.split('/') %}
+{% set gh_username = github_repo_splitted[-2] %}
+{% set gh_project = github_repo_splitted[-1] %}
 
 <p align="center">
     <a href="{{ cookiecutter.github_repo_url }}/actions"><img alt="CI Status" src="{{ cookiecutter.github_repo_url }}/actions/workflows/ci.yaml/badge.svg?branch=main"></a>
-    <a href="https://{{ cookiecutter.project_slug | replace('_', '-') }}.readthedocs.io/en/latest/?version=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace('_', '-') }}"></a>
-    <a href="https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}"><img alt="PyPI" src="(https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg"></a>
+    <a href="https://{{ gh_project }}.readthedocs.io/"><img alt="Documentation Status" src="https://readthedocs.org/projects/{{ gh_project }}/badge/?version=latest"></a>
+    <a href="https://pypi.org/project/{{ cookiecutter.project_slug }}"><img alt="PyPI" src="https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg"></a>
     <a href="{{ cookiecutter.github_repo_url }}"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-    <a href="https://codecov.io/gh/{{cookiecutter.github_username_or_project}}/{{ cookiecutter.project_slug }}"><img alt="Coverage Status" src="https://codecov.io/gh/{{cookiecutter.github_username_or_project}}/{{ cookiecutter.project_slug }}/branch/main/graph/badge.svg"></a>
+    <a href="https://codecov.io/gh/{ gh_project }}/{{ gh_username }}"><img alt="Coverage Status" src="https://codecov.io/gh/{{ gh_project }}/{{ gh_username }}/branch/main/graph/badge.svg"></a>
     {%- if cookiecutter.license in LICENSE_BADGES %}
     <a href="{{ LICENSE_BADGES[cookiecutter.license]['link'] }}"><img alt="License: {{cookiecutter.license}}" src="{{ LICENSE_BADGES[cookiecutter.license]['badge'] }}"></a>
     {%- endif %}
