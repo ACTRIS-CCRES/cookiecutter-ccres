@@ -23,15 +23,25 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        with:
+          lfs: true
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
+      - name: Cache python environment
+        uses: actions/cache@v3
+        # https://tobiasmcnulty.com/posts/caching-pre-commit/
+        # This restore and/or save in the same action
+        with:
+          path: ~/.cache/pip
+          key: ${{"{{"}} runner.os {{"}}"}}-python-3.10-venv-${{"{{"}} hashFiles('pyproject.toml') {{"}}"}}
+
       - name: Install dependencies
         run: |
-          pip install .[dev]
+          pip install -U .[dev]
 
       - name: Cache pre-commits
         id: cache-pre-commits
@@ -60,10 +70,30 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { python: "3.10", os: "windows-latest", session: "tests" }
-          - { python: "3.10", os: "macos-latest", session: "tests" }
-          - { python: "3.9", os: "ubuntu-latest", session: "tests" }
-          - { python: "3.8", os: "ubuntu-latest", session: "tests" }
+          - {
+              python: "3.10",
+              os: "windows-latest",
+              session: "tests",
+              cache-path: ~\AppData\Local\pip\Cache,
+            }
+          - {
+              python: "3.10",
+              os: "macos-latest",
+              session: "tests",
+              cache-path: ~/Library/Caches/pip,
+            }
+          - {
+              python: "3.9",
+              os: "ubuntu-latest",
+              session: "tests",
+              cache-path: ~/.cache/pip,
+            }
+          - {
+              python: "3.8",
+              os: "ubuntu-latest",
+              session: "tests",
+              cache-path: ~/.cache/pip,
+            }
 
     env:
       FORCE_COLOR: "1"
@@ -72,6 +102,8 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        with:
+          lfs: true
 
       - name: Set up Python ${{"{{"}} matrix.python {{"}}"}}
         uses: actions/setup-python@v4
@@ -83,9 +115,17 @@ jobs:
           pip install pip
           pip --version
 
+      - name: Cache python environment
+        uses: actions/cache@v3
+        with:
+          path: ${{"{{"}} matrix.cache-path {{"}}"}}
+          key: ${{"{{"}} runner.os {{"}}"}}-python-${{"{{"}} matrix.python {{"}}"}}-pip-${{"{{"}} hashFiles('pyproject.toml') {{"}}"}}
+          restore-keys: |
+            ${{"{{"}} runner.os {{"}}"}}-pip-
+
       - name: Install dependencies
         run: |
-          pip install .[dev]
+          pip install -U .[dev]
 
       - name: Run tests
         run: |
@@ -104,16 +144,21 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        with:
+          lfs: true
 
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
-      - name: Upgrade pip
-        run: |
-          pip install pip
-          pip --version
+      - name: Cache python environment
+        uses: actions/cache@v3
+        # https://tobiasmcnulty.com/posts/caching-pre-commit/
+        # This restore and/or save in the same action
+        with:
+          path: ~/.cache/pip
+          key: ${{"{{"}} runner.os {{"}}"}}-python-3.10-pip-${{"{{"}} hashFiles('pyproject.toml') {{"}}"}}
 
       - name: Install dependencies
         run: |
@@ -138,6 +183,8 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        with:
+          lfs: true
 
       - name: Download coverage data
         uses: actions/download-artifact@v3
@@ -163,6 +210,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          lfs: true
           fetch-depth: 0
 
       - name: Set up Python
@@ -174,7 +222,7 @@ jobs:
       - name: Publish package to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: {{ "${{" }} secrets.TEST_PYPI_TOKEN{{ "}}" }}
+          password: ${{"{{"}} secrets.TEST_PYPI_TOKEN {{"}}"}}
           repository_url: https://test.pypi.org/legacy/
           skip_existing: true
   pypi:
@@ -187,6 +235,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          lfs: true
           fetch-depth: 0
 
       - name: Set up Python
@@ -197,4 +246,4 @@ jobs:
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: {{ "${{" }} secrets.PYPI_TOKEN {{ "}}" }}
+          password: ${{"{{"}} secrets.PYPI_TOKEN {{"}}"}}
