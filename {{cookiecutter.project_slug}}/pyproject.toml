@@ -101,3 +101,4 @@ exclude = ['build/','venv']
 [tool.docformatter]
 recursive = true
 blank = true
+syntax = "numpy"
