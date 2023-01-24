@@ -5,7 +5,7 @@ helps, and credit will always be given.
 
 You can contribute in many ways:
 
-## Types of Contributions
+## Types of Contributions
 
 
 ### Report Bugs
@@ -23,18 +23,18 @@ If you are reporting a bug, please include:
 Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
 wanted" is open to whoever wants to implement it.
 
-### Implement Features
+### Implement Features
 
 Look through the GitHub issues for features. Anything tagged with "enhancement"
 and "help wanted" is open to whoever wants to implement it.
 
-### Write Documentation
+### Write Documentation
 
 {{ cookiecutter.project_name }} could always use more documentation, whether as part of the
 official {{ cookiecutter.project_name }} docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
-### Submit Feedback
+### Submit Feedback
 
 The best way to send feedback is to file an issue at {{cookiecutter.github_repo_url}}/issues.
 
@@ -77,9 +77,9 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
     pre-commit install
     ```
 
-5. Make sure you have `git-LFS` installed.
+5. Make sure you have `git-lfs` installed, then run `git lfs install`.
 
-6. Create a branch for local development::
+6. Create a branch for local development:
 
     ```
     git checkout -b name-of-your-bugfix-or-feature
@@ -100,7 +100,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
     git add <your-modified-files>
     ```
 
-9. Commit your changes and push your branch to GitHub::
+9. Commit your changes and push your branch to GitHub:
 
     ```
     git add .
@@ -110,7 +110,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 
 10.  Submit a pull request through the GitHub website.
 
-## Pull Request Guidelines
+## Pull Request Guidelines
 
 Before you submit a pull request, check that it meets these guidelines:
 
@@ -132,7 +132,7 @@ python -m pytest tests.test_{{ cookiecutter.project_slug }}
 
 A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in HISTORY.rst).
-Then run::
+Then run:
 
 ```
 bump2version patch # possible: major / minor / patch / release_candidate / dev
