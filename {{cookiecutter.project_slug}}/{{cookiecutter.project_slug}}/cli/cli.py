@@ -6,7 +6,7 @@ import click
 
 
 @click.command()
-def main(args=None):
+def main(args=None) -> None:
     """Console script for {{cookiecutter.project_slug}}."""
     click.echo("{{cookiecutter.project_slug}}.cli.main")
     return 0
