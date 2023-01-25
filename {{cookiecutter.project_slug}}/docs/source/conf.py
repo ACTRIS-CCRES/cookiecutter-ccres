@@ -44,7 +44,6 @@ extensions = [
 
 
 def linkcode_resolve(domain, info):
-    print(info)
     if domain != "py":
         return None
     if not info["module"]:

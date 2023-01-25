@@ -7,9 +7,8 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends libudunits2-dev gdb \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade pip
 
-COPY . .
+COPY . /{{cookiecutter.project_slug}}
 
-RUN pip install .[dev]
-
-ENTRYPOINT [ "python" ]
+RUN pip install /{{cookiecutter.project_slug}}[dev]
