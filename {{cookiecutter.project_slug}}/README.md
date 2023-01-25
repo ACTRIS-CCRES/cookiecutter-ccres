@@ -66,6 +66,8 @@
     {%- if cookiecutter.license in LICENSE_BADGES %}
     <a href="{{ LICENSE_BADGES[cookiecutter.license]['link'] }}"><img alt="License: {{cookiecutter.license}}" src="{{ LICENSE_BADGES[cookiecutter.license]['badge'] }}"></a>
     {%- endif %}
+    <a href="{{cookiecutter.github_repo_url}}/issues"><img alt="Issue Badge" src="https://img.shields.io/github/issues/{{gh_username}}/{{gh_project}}"></a>
+    <a href="{{cookiecutter.github_repo_url}}/pulls"><img alt="Pull requests Badge" src="https://img.shields.io/github/issues-pr/{{gh_username}}/{{gh_project}}"></a>
 </p>
 
 {{ cookiecutter.project_short_description }}
