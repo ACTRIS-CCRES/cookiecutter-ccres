@@ -21,7 +21,7 @@ BASE_URL = "{{cookiecutter.github_repo_url}}"
 # -- Project information -----------------------------------------------------
 
 project = "{{cookiecutter.project_slug}}"
-copyright = "CNRS/Ecole Polytechnique"
+copyright = "{{cookiecutter.copyright}}"
 author = "{{cookiecutter.author}}"
 
 LOGO_PATH = os.path.join(
@@ -34,7 +34,6 @@ LOGO_PATH = os.path.join(
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx_rtd_theme",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",

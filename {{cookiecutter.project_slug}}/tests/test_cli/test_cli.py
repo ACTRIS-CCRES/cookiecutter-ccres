@@ -1,4 +1,4 @@
-"""Tests for `{{ cookiecutter.project_slug }}` package."""
+"""Tests for `{{cookiecutter.project_slug}}` package."""
 
 import pytest
 from click.testing import CliRunner
@@ -9,7 +9,6 @@ from {{cookiecutter.project_slug}}.cli import cli
 @pytest.fixture
 def response():
     """Sample pytest fixture.
-
     See more at: http://doc.pytest.org/en/latest/fixture.html
     """
     # import requests
@@ -35,4 +34,4 @@ def test_command_line_interface_help():
     runner = CliRunner()
     help_result = runner.invoke(cli.main, ["--help"])
     assert help_result.exit_code == 0
-    assert "--help  Show this message and exit." in help_result.output
+    assert "Show this message and exit." in help_result.output
